@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter Tight', serif;
+    line-height: 1.5;
+
+}
+
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #44586e;
+}
+
+
+.contact-btn {
+    background-color: #18212B; /* Mörkblå färg */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-btn:hover {
+    background-color: #44586e; /* Lite ljusare för hovring */
+  }
+
+
+/* Hamburgermeny */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 3px;
+    transition: 0.3s;
+}
+
+/* Animation för hamburgermeny (blir ett kryss vid klick) */
+.hamburger.change .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: #fff;
+}
+
+.hamburger.change .line2 {
+    opacity: 0;
+}
+
+.hamburger.change .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: #fff;
+}
+
+/* Mobilmeny */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.mobile-menu ul li a:hover {
+    color: #fbc610;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .contact-btn {
+        display: none;
+    }
+}
+
+/* Visa mobilmenyn när aktiv */
+.mobile-menu.show {
+    display: flex;
+}
+
+
+
+
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #18212B, #44586E); /* Gradient från mörk till ljus blå */
+    color: white;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    max-width: 700px;
+  }
+  
+strong {
+    font-weight: 600;
+}
+
+  .hero-content p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    max-width: 750px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    justify-content: center;
+  }
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 35px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    max-width: 200px;
+  }
+  
+  .btn-phone {
+    color: #f1f1f1;
+    border: 2px solid #f1f1f1;
+  }
+
+  .phone-icon {
+    height: 14px;
+    margin-right: 5px;
+  }
+  
+  .btn-phone:hover {
+    background-color: #18212B;
+    color: white;
+  }
+  
+  .btn-email {
+    background-color: #18212B;
+    color: white;
+  }
+  
+  .btn-email:hover {
+    background-color: #44586E;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .hero-buttons {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .btn {
+      width: 100%;
+      text-align: center;
+      align-items: center;
+    }
+
+    .phone-icon {
+        margin-left: 15px;
+        margin-right: 10px;
+    }
+  }
+
+
+  .services {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 30px;
+  }
+  
+  .service-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .service-item p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .service-note {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #666;
+  }
+  
+  .service-note a {
+    color: #b16106;
+    text-decoration: none;
+  }
+  
+  .service-note a:hover {
+    text-decoration: underline;
+  }
+  
+@media (max-width: 500px) {
+    .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .services h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      .service-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+
+      .about h2 {
+        font-size: 2rem;
+      }
+}
+
+
+.about {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  .about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555;
+    text-align: center; /* Ändra till left om du vill ha vänsterjusterad text */
+    max-width: 800px;
+    align-items: center;
+  }
+  
+  
