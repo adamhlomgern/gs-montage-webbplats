@@ -185,7 +185,7 @@ body, html {
   }
   
 strong {
-    font-weight: 600;
+    font-weight: 800;
 }
 
   .hero-content p {
@@ -270,7 +270,7 @@ strong {
 
 
   .services {
-    padding: 50px 20px;
+    padding: 70px 20px;
     background-color: #f8f9fa;
   }
   
@@ -316,7 +316,7 @@ strong {
   }
   
   .service-note a {
-    color: #b16106;
+    color: #44586E;
     text-decoration: none;
   }
   
@@ -346,36 +346,184 @@ strong {
 
 
 .about {
-    padding: 50px 20px;
-    background-color: #f8f9fa;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding: 50px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Skjuter texten till höger */
+  color: #fff;
+  background: 
+    linear-gradient(to right, rgba(23, 30, 68, 0.8), rgba(69, 72, 87, 0.8)), 
+    url('/bilder/bakgrund.jpg') no-repeat center center;
+  background-size: cover;
+  backdrop-filter: blur(35px); /* Gör bakgrunden lite suddig */
+  min-height: 100vh; /* Full höjd för sektionen */
+  overflow: hidden;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(to right, rgba(23, 30, 68, 0.8), rgba(69, 72, 87, 0.8)),
+    url('/bilder/bakgrund.jpg') no-repeat center center;
+  background-size: cover;
+  filter: blur(10px); /* Justerar oskärpan här */
+  z-index: 1;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  max-width: 800px; /* Begränsar bredden på textblocket */
+  margin-right: 5%; /* Lite luft från högerkanten */
+}
+
+.about h2 {
+  text-align: left;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #d6d6d6;
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #d6d6d6;
+  text-align: left;
+}
+
+.about a {
+  color: #f87b33; /* Färg för länkar */
+  text-decoration: none;
+}
+
+.about a:hover {
+  text-decoration: underline;
+  color: #bfccdb;
+}
+
+/* Mobilanpassning */
+@media (max-width: 768px) {
+  .about {
+      flex-direction: column;
+      justify-content: center;
   }
-  
-  
+
+  .about-content {
+      margin-right: 0;
+      max-width: 90%; /* Gör textblocket bredare på mobil */
+      text-align: center; /* Centrerar text för mindre skärmar */
+      padding: 0;
+
+  }
+
   .about h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+      text-align: center;
   }
+
+}
+
   
-  .about p {
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: #555;
-    text-align: center; /* Ändra till left om du vill ha vänsterjusterad text */
-    max-width: 800px;
-    align-items: center;
+.form-wrapper {
+  padding: 30px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+  /* Form Container */
+form {
+  background: linear-gradient(135deg, #18212B, #44586E); /* Samma gradient som hero */
+  padding: 30px;
+  border-radius: 10px;
+  margin: 20px auto;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-info {
+  max-width: 320px;
+}
+
+/* Hidden Fields (Anti-Spam) */
+.hidden {
+  display: none !important;
+}
+
+/* Input and Textarea Styles */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #ffffff1a; /* Semi-transparent vit bakgrund */
+  color: white;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #ccc;
+}
+
+/* Submit Button */
+form button {
+  background-color: #44586E; /* Samma ljusare blå som hero */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #18212B; /* Mörkare blå för hover */
+}
+
+/* Textarea Adjustments */
+form textarea {
+  height: 100px;
+  resize: none; /* Ingen storleksändring för textfältet */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 700px) {
+  .form-wrapper {
+      display: flex;
+      flex-direction: column;
+      
+      gap: 40px; /* Space between text and form */
+      align-items: center;
   }
-  
-  .about a {
-    color: #b16106;
-    text-decoration: none;
+
+  .form-info {
+      flex: 1;
+      text-align: left;
+      width: 100%;
+      max-width: 100%;
+
   }
-  
-  .about a:hover {
-    text-decoration: underline;
+
+  form {
+      flex: 1;
+      max-width: 100%;
+      width: 100%;
   }
-  
+}
+
