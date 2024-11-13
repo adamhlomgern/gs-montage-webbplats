@@ -560,6 +560,8 @@ form textarea {
   flex: 2;
   justify-content: space-between;
   gap: 40px;
+  margin-right: 10px;
+  
 }
 
 .footer-links {
