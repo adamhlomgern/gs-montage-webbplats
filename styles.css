@@ -2,17 +2,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 body {
     font-family: 'Inter Tight', serif;
     line-height: 1.5;
-
+    overflow-x: hidden;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
 .wrapper {
-    width: 100%;
+    width: 100vw;
+    min-width: 100%;
+    padding: 0;
     margin: 0 auto;
 }
 
@@ -21,8 +29,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: none; /* Samma gradient som hero */;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo img {
@@ -39,7 +49,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #d6d6d6;
     font-weight: 600;
     text-transform: uppercase;
     transition: color 0.3s;
@@ -52,7 +62,7 @@ body {
 
 .contact-btn {
     background-color: #18212B; /* Mörkblå färg */
-    color: white;
+    color: #d6d6d6;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 25px;
@@ -76,7 +86,7 @@ body {
 .hamburger div {
     width: 30px;
     height: 4px;
-    background-color: #333;
+    background-color: #d6d6d6;
     margin: 3px;
     transition: 0.3s;
 }
@@ -84,7 +94,7 @@ body {
 /* Animation för hamburgermeny (blir ett kryss vid klick) */
 .hamburger.change .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
-    background-color: #fff;
+    background-color: #d6d6d6;
 }
 
 .hamburger.change .line2 {
@@ -93,7 +103,7 @@ body {
 
 .hamburger.change .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
-    background-color: #fff;
+    background-color: #d6d6d6;
 }
 
 /* Mobilmeny */
@@ -121,13 +131,13 @@ body {
 }
 
 .mobile-menu ul li a {
-    color: #fff;
+    color: #d6d6d6;
     font-size: 1.5rem;
     text-decoration: none;
 }
 
 .mobile-menu ul li a:hover {
-    color: #fbc610;
+    color: #44586e;
 }
 
 /* Responsiv design */
@@ -155,14 +165,16 @@ body {
 
   .hero {
     height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
     background: linear-gradient(135deg, #18212B, #44586E); /* Gradient från mörk till ljus blå */
-    color: white;
-    text-align: center;
+    color: #d6d6d6;
+    padding: auto 10px;
+
   }
   
   .hero-content h1 {
@@ -202,8 +214,8 @@ strong {
   }
   
   .btn-phone {
-    color: #f1f1f1;
-    border: 2px solid #f1f1f1;
+    color: #d6d6d6;
+    border: 2px solid #d6d6d6;
   }
 
   .phone-icon {
@@ -218,7 +230,7 @@ strong {
   
   .btn-email {
     background-color: #18212B;
-    color: white;
+    color: #d6d6d6;
   }
   
   .btn-email:hover {
@@ -358,4 +370,12 @@ strong {
     align-items: center;
   }
   
+  .about a {
+    color: #b16106;
+    text-decoration: none;
+  }
+  
+  .about a:hover {
+    text-decoration: underline;
+  }
   
